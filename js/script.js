@@ -8,12 +8,11 @@ const urlCode = urlParams.get('code')
 function EAN13(code) {
     if (code.length === 12) {
         codeSplit = code.split('')
+        sum = 0
         for (let i = 0; i < codeSplit.length; i++) {
-            sum = (typeof (sum) === 'undefined' ? 0 : sum)
-            sum = (code[i] * (i % 2 === 0 ? 1 : 3)) + sum
+            sum = (codeSplit[i] * (i % 2 === 0 ? 1 : 3)) + sum
         }
         digit = ((Math.trunc(sum / 10) + 1) * 10) - sum
-        sum = 0
         return createJSON(code, digit)
     } else {
         console.log('Codigo deve conter 12 digitos')
