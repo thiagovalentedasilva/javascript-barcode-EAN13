@@ -86,13 +86,3 @@ let tagCode = document.createElement('code')
 tagCode.textContent = json
 // add it to the element
 body.appendChild(tagCode)
-
-
-
-console.log(JSON.parse(json).fontEAN13)
-
-
-
-        //let blob = new Blob([json], { type: "application/json" });
-        //console.log(json)
-        //window.location.href = URL.createObjectURL(blob);
